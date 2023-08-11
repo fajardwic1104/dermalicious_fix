@@ -5,6 +5,9 @@ final class HargaPaket extends CI_Controller
     function __construct() {
         parent::__construct();
         $this->load->model('master/HargaModel');
+        if ($this->session->userdata('id_user') == null ) {
+            redirect('login/logout');
+        }
     }
 
     function index() {

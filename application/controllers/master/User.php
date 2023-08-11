@@ -7,6 +7,9 @@ class User extends CI_Controller
         parent::__construct();
         $this->load->library('encrypt');
         $this->load->model('master/UserModel');
+        if ($this->session->userdata('id_user') == null ) {
+            redirect('login/logout');
+        }
     }
 
     function index() {

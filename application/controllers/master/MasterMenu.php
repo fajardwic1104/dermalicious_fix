@@ -2,6 +2,12 @@
 
 final class MasterMenu extends CI_Controller
 {
+    function __construct() {
+        parent::__construct();
+        if ($this->session->userdata('id_user') == null ) {
+            redirect('login/logout');
+        }
+    }
     function index() {
         $this->load->view('master/master_front');
     }

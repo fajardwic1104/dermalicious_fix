@@ -5,6 +5,9 @@ class TimeTableByDate extends CI_Controller
     function __construct() {
         parent::__construct();
         $this->load->model('TimeTableByDateModel');
+        if ($this->session->userdata('id_user') == null ) {
+            redirect('login/logout');
+        }
     }
 
     public function front($tgl,$jenis) {

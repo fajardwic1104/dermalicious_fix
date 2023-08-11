@@ -5,6 +5,9 @@ class TimeTableDetail extends CI_Controller
     function __construct() {
         parent::__construct();
         $this->load->model('TimeTableDetailModel');
+        if ($this->session->userdata('id_user') == null ) {
+            redirect('login/logout');
+        }
     }
 
     function getDetailTimeTable($id_transaksi, $id_transaksi_detail) {

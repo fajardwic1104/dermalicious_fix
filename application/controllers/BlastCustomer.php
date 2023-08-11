@@ -6,6 +6,9 @@ class BlastCustomer extends CI_Controller
     {
         parent::__construct();
         $this->load->model('BlastModel');
+        if ($this->session->userdata('id_user') == null ) {
+            redirect('login/logout');
+        }
         // if ($this->session->level != 'super admin') {
         //     redirect('login');
         // }

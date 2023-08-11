@@ -5,9 +5,9 @@ class Dashboard extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-        // if ($this->session->level != 'super admin') {
-        //     redirect('login');
-        // }
+        if ($this->session->userdata('id_user') == null ) {
+            redirect('login/logout');
+        }
     }
 
     public function index()
