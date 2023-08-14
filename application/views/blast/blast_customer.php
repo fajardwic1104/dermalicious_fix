@@ -30,7 +30,7 @@
             </div>
             <div class="col-sm-4">
               <div class="button-create">
-                <a href="index.html" class="btn btn-primary" role="button" style="margin-left: -12px;"> <i
+              <a href="<?=site_url('dashboard')?>" class="btn btn-primary" role="button" style="margin-left: -12px;"> <i
                     class="fas fa-reply">
                   </i>
                 </a>
