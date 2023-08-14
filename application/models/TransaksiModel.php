@@ -177,6 +177,7 @@ class TransaksiModel extends CI_Model
         $origin = "Dermalicious (PT. Bumi Estetika Bahagia Gemilang)";
         $distance_data = file_get_contents('https://maps.googleapis.com/maps/api/distancematrix/json?&origins='.urlencode($origin).'&destinations='.urlencode($destination).'&key=AIzaSyCVGovrV7fEoMc14xk81XXSKDicUhkgWAY');
         $distance_arr = json_decode($distance_data);
+        
             if ($distance_arr->status=='OK') {
                 $destination_addresses = $distance_arr->destination_addresses[0];
                 $origin_addresses = $distance_arr->origin_addresses[0];
@@ -516,8 +517,17 @@ class TransaksiModel extends CI_Model
             $alamat_3 = $post['alamat_3'].", ".$post['kelurahan_3'].", ".$post['kecamatan_3'].", ".$post['kota_3'];
         }
         $km1 = $this->getKM($alamat_1);
-        $km2 = $this->getKM($alamat_2);
-        $km3 = $this->getKM($alamat_3);
+        $km2 = null;
+        $km3 = null;
+
+        // var_dump($alamat_3);die;
+        if ($alamat_2 != "") {
+            $km2 = $this->getKM($alamat_2);
+        }
+        if ($alamat_3 != "") {
+            $km3 = $this->getKM($alamat_3);
+        }
+
         $jadwal_pengiriman =  implode(', ', $post['days']);
 
         $data_detail_trans = array(

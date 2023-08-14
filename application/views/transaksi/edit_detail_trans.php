@@ -115,9 +115,9 @@
                       <select class="form-control select2" name="periode_paket" id="periode_paket" style="width: 100%;" required>
                         <option value="<?=$detail_transaksi->periode_paket?>"><?=$detail_transaksi->periode_paket?></option>
                         <option>-- Pilih Periode Paket --</option>
-                        <option value="2 Minggu">2 Minggu</option>
-                        <option value="1 Bulan">1 Bulan</option>
-                        <option value="2 Bulan">2 Bulan</option>
+                        <?php foreach ($periode as $periode) {?>
+                          <option value="<?=$periode['periode_paket']?>"><?=$periode['periode_paket']?></option>
+                        <?php }?>
                       </select>
                     </div>
                   </div>
@@ -299,7 +299,7 @@
                         <div class="col-lg-6 col-sm-12">
                           <div class="form-group">
                             <label>Alamat 2</label>
-                            <textarea class="form-control" rows="3" id="alamat-2" name="alamat_2" required><?=$detail_transaksi->alamat_2?></textarea>
+                            <textarea class="form-control" rows="3" id="alamat-2" name="alamat_2"><?=$detail_transaksi->alamat_2?></textarea>
                           </div>
                           <div class="row">
                             <div class="col-lg-6 col-sm-12">
@@ -354,7 +354,7 @@
                               <label class="my-1 d-flex align-items-center">Google Maps <span class="ml-auto"><i class="fas fa-search-location" onclick="alamat2()" style="cursor:pointer";></i></span></label>
                                 <!--<a onclick="alamat2()" class="btn btn-primary" data-toggle="tooltip" title="Search"><i class="fas fa-search-location" ></i></a>-->
                                 
-                                <iframe id="maps-2" class="form-control form-control-lg" src="<?=$detail_transaksi->maps_2?>" style="height: 250px;" required frameborder="0"></iframe>
+                                <iframe id="maps-2" class="form-control form-control-lg" src="<?=$detail_transaksi->maps_2?>" style="height: 250px;" frameborder="0"></iframe>
                                 <input class="form-control form-control-lg" type="hidden" name="linkmaps_2" value="<?=$detail_transaksi->maps_2?>" id="link-maps-2" placeholder="" style="height: 80px;">
                               </div>
                               <!-- <a href="#" class="btn btn-sm-light" data-toggle="tooltip" title="Search"><i class="fas fa-search-location"></i></a> -->
@@ -363,7 +363,7 @@
                             </div>
                             <div class="col-lg-6 col-sm-12">
                               <label>Catatan Pengiriman</label>
-                              <textarea class="form-control" rows="3" name="notepengiriman_1" required style="height: 250px;"><?=$detail_transaksi->note_pengiriman_2?></textarea>
+                              <textarea class="form-control" rows="3" name="notepengiriman_1" style="height: 250px;"><?=$detail_transaksi->note_pengiriman_2?></textarea>
                               <!--<input class="form-control form-control-lg" type="text" name="notepengiriman_2" required value="<?=$detail_transaksi->note_pengiriman_2?>" style="height: 250px;">-->
                             </div>
                           </div>
@@ -372,7 +372,7 @@
                         <div class="col-lg-6 col-sm-12">
                           <div class="form-group">
                             <label>Alamat 3</label>
-                            <textarea class="form-control" rows="3" id="alamat-3" name="alamat_3" required ><?=$detail_transaksi->alamat_3?></textarea>
+                            <textarea class="form-control" rows="3" id="alamat-3" name="alamat_3" ><?=$detail_transaksi->alamat_3?></textarea>
                           </div>
                           <div class="row">
                             <div class="col-lg-6 col-sm-12">
@@ -416,7 +416,7 @@
                             <div class="col-lg-6 col-sm-12">
                               <div class="form-group">
                                 <label>Kode Pos</label>
-                                <input class="form-control" id="kodepos-3" name="kodepos_3" required type="text" readonly placeholder="12345">
+                                <input class="form-control" id="kodepos-3" name="kodepos_3"  type="text" readonly placeholder="12345">
                               </div>
                             </div>
                           </div>
@@ -426,7 +426,7 @@
                                 <label class="my-1 d-flex align-items-center">Google Maps <span class="ml-auto"><i class="fas fa-search-location" onclick="alamat3()" style="cursor:pointer";></i></span></label>
                                 <!--<a onclick="alamat3()" class="btn btn-primary" data-toggle="tooltip" title="Search"><i class="fas fa-search-location" ></i></a>-->
                                 <!-- <button onclick="alamat3()">search</button> -->
-                                <iframe id="maps-3" class="form-control form-control-lg" src="<?=$detail_transaksi->maps_3?>" style="height: 250px;" required frameborder="0"></iframe>
+                                <iframe id="maps-3" class="form-control form-control-lg" src="<?=$detail_transaksi->maps_3?>" style="height: 250px;" frameborder="0"></iframe>
                                 <input class="form-control form-control-lg" type="hidden" name="linkmaps_3" value="<?=$detail_transaksi->maps_3?>" id="link-maps-3" placeholder="">
                               </div>
                               <!-- <input class="form-control form-control-lg" type="text" placeholder=""
@@ -435,7 +435,7 @@
                             <div class="col-lg-6 col-sm-12">
                               <div class="form-group">
                                 <label>Catatan Pengiriman</label>
-                                <textarea class="form-control" rows="3" name="notepengiriman_1" required style="height: 250px;"><?=$detail_transaksi->note_pengiriman_3?></textarea>
+                                <textarea class="form-control" rows="3" name="notepengiriman_1" style="height: 250px;"><?=$detail_transaksi->note_pengiriman_3?></textarea>
                                 <!--<input class="form-control form-control-lg" type="text" name="notepengiriman_3" value="<?=$detail_transaksi->note_pengiriman_3?>" required placeholder="" style="height: 250px;">-->
                               </div>
                             </div>

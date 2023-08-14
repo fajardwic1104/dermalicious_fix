@@ -679,6 +679,8 @@ class Transaksi extends CI_Controller
         $data['kota2'] = $this->TransaksiModel->getCities();
         $data['kota3'] = $this->TransaksiModel->getCities();
         $data['id_detail_trans'] = $id_detail_transaksi;
+        $data['periode'] = $this->TransaksiModel->getAllPeriodePaket();
+// $data['jenis_paket'] = $this->TransaksiModel->getJenisPaket();
 
         $this->load->view('transaksi/edit_detail_trans', $data);
     }
