@@ -190,7 +190,7 @@
                                 <!-- /.form-group -->
                                 <div class="form-group">
                                     <label>Jenis Paket</label>
-                                    <select class="form-control select2" style="width: 100%;" name="id_jenis_paket">
+                                    <select class="form-control select2" style="width: 100%;" name="jenis_paket">
                                     <option value="">-- Select Jenis Paket --</option>';
                                         <?php foreach ($jenis as $key) { ?>
                                             <option value="<?=$key['id_jenis_paket']?>"><?=$key['jenis_paket']?></option>
